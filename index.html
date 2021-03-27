@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Node.js with Socket.io</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+      // let socket = io.connect("http://localhost:3000/", { reconnect: true });
+
+      // socket.on("connect", function (socket) {
+      //   console.log(">>> client socket connected");
+      // });
+
+      // socket.on("welcome", function (data) {
+      //   console.log(data);
+      // });
+
+      // socket.on("socketToMe", function (data) {
+      //   console.log(data);
+      // });
+
+      // const socket = io(
+      //   "ws://localhost:3000?user_id=604359ae64e857197c61da75",
+      //   { reconnect: true }
+      // );
+      const socket = io(
+        // "ws://xlan-property-finder.herokuapp.com?user_id=604359ae64e857197c61da75",
+        "https://soket2020.herokuapp.com/",
+        { reconnect: true }
+      );
+      socket.on("connect", function (socket) {
+        console.log(">>> client socket connected");
+        
+      });
+      socket.on("booking_request", function (data) {
+        console.log(data);
+      });
+      socket.on("user-10", function (data) {
+        console.log(data);
+      });
+
+      //   var socket2 = io.connect("http://localhost:3000", { reconnect: true });
+      //   socket2.on("socketToMe", function (data) {
+      //     console.log(data);
+      //   });
+      //   socket2.on("connect", function (socket) {
+      //     console.log(">>> client socket connected");
+      //   });
+
+      //   function init() {
+      //     output = document.getElementById("output");
+      //     testSocket();
+      //   }
+
+      //   function testSocket() {
+      //     var socket = io.connect("http://localhost:3000/");
+      //     socket.on("test", onMessage);
+      //     socket.on("connect", onConnect);
+      //     socket.on("disconnect", onDisconnect);
+      //     socket.on("connect_error", onError);
+      //     socket.on("reconnect_error", onError);
+
+      //     function onConnect(evt) {
+      //       writeToScreen("CONNECTED");
+      //       doSend("Allo?");
+      //     }
+
+      //     function onDisconnect(evt) {
+      //       writeToScreen("DISCONNECTED");
+      //     }
+
+      //     function onMessage(data) {
+      //       writeToScreen(
+      //         '<span style="color: blue;">RESPONSE: ' + data + "</span>"
+      //       );
+      //       socket.close();
+      //     }
+
+      //     function onError(message) {
+      //       writeToScreen('<span style="color: red;">ERROR:</span> ' + message);
+      //     }
+
+      //     function doSend(message) {
+      //       writeToScreen("SENT: " + message);
+      //       socket.emit("test", message);
+      //     }
+
+      //     function writeToScreen(message) {
+      //       var pre = document.createElement("p");
+      //       pre.style.wordWrap = "break-word";
+      //       pre.innerHTML = message;
+      //       output.appendChild(pre);
+      //     }
+      //   }
+
+      //   window.addEventListener("load", init, false);
+    </script>
+  </body>
+</html>
